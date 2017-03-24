@@ -35,18 +35,18 @@ namespace Vidly.Controllers
             return Content("There are " + id + " ducks!");
         }
 
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if (!pageIndex.HasValue)
-            {
-                pageIndex = 1;
-            }
-            if (String.IsNullOrWhiteSpace(sortBy))
-            {
-                sortBy = "Name";
-            }
-            return Content("Index called. pageIndex = " + pageIndex + ", sortBy = " + sortBy);
-        }
+        //public ActionResult Index(int? pageIndex, string sortBy)
+        //{
+        //    if (!pageIndex.HasValue)
+        //    {
+        //        pageIndex = 1;
+        //    }
+        //    if (String.IsNullOrWhiteSpace(sortBy))
+        //    {
+        //        sortBy = "Name";
+        //    }
+        //    return Content("Index called. pageIndex = " + pageIndex + ", sortBy = " + sortBy);
+        //}
 
         [Route("movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")] // note adding constraints to possible attribute parameter values
         public ActionResult ByReleaseDate(int year, int month)
@@ -54,7 +54,7 @@ namespace Vidly.Controllers
             return Content(year + " / " + month); 
         }
 
-        public ActionResult GetAllMovies()
+        public ActionResult Index()
         {
             List<Movie> allMovies = new List<Movie>
             {

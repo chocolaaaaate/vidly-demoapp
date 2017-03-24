@@ -129,6 +129,5 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Micro
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AI.Web.xml
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.pdb
