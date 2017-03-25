@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201703250341595_SeedMembershipTypeDescriptionData.Designer.cs">
       <DependentUpon>201703250341595_SeedMembershipTypeDescriptionData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703250408256_AddedDoBToCustomer.cs" />
+    <Compile Include="Migrations\201703250408256_AddedDoBToCustomer.Designer.cs">
+      <DependentUpon>201703250408256_AddedDoBToCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -284,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703250341595_SeedMembershipTypeDescriptionData.resx">
       <DependentUpon>201703250341595_SeedMembershipTypeDescriptionData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250408256_AddedDoBToCustomer.resx">
+      <DependentUpon>201703250408256_AddedDoBToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

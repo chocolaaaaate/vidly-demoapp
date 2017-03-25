@@ -15,6 +15,9 @@ namespace Vidly.Models
         [StringLength(255)]
         public string Name { get; set; }
 
+        //date of birth
+        public DateTime DoB { get; set; }
+
         public bool IsSubscribedToNewsletter { get; set; }
 
         // a navigation property, essentially a linkage. 

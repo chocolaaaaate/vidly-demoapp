@@ -148,3 +148,4 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddDescriptionToMembershipType.resources
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.SeedMembershipTypeDescriptionData.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedDoBToCustomer.resources
