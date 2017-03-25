@@ -71,19 +71,37 @@ namespace Vidly.Controllers
 
         //ensuring this can only be called by http POST
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
             //yes its actually the NewCustomerViewModel type but ASP.NET MVC is smart 
             //enough to see properties prefixed with Customer so it can do this binding 
             //straight to Customer. But understand why this happens. 
 
-            // SAVING TO THE DATABASE
-            _context.Customers.Add(customer);// not yet gone to DB
+            if (customer.Id == 0) // create
+            {
+                // SAVING TO THE DATABASE
+                _context.Customers.Add(customer);// not yet gone to DB
+            }
+            else // update existing customer 
+            {
+                var custFromDb = _context.Customers.Single(c => c.Id == customer.Id);
+                //now update the customer from the db with values of the customer in the form that was sent in the POST request
+
+
+                //TryUpdateModel(custFromDb); // this updates the param object by mapping POST request values to its properties
+                // has the disadvantage of being an unfiltered update - risk if hacker puts bad things in POST request
+
+                custFromDb.Name = customer.Name;
+                custFromDb.DoB = customer.DoB;
+                custFromDb.MembershipTypeId = customer.MembershipTypeId; //TODO: this is null
+                custFromDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+
+            }
             _context.SaveChanges(); // NOW it was persisted to DB
             // note SaveChanges is an all or nothing operation - either all go to the DB or none. 
 
             // ok after they saved the customer it makes sense to send them to the list of all customers, i.e. a redirect. 
-            return RedirectToAction("Index", "Customer"); // says go to Customers controller's Index method 
+            return RedirectToAction("Index", "Customers"); // says go to Customers controller's Index method 
 
         }
 

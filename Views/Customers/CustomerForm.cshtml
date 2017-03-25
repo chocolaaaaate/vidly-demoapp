@@ -8,7 +8,7 @@
 <h2>Customer</h2>
 
 @*name of action (and what controller) called when form is submitted*@ 
-@using (@Html.BeginForm("Create", "Customers"))
+@using (@Html.BeginForm("Save", "Customers")) 
 {
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.Name)
@@ -29,6 +29,8 @@
         </label>
     </div>
 
+    //need this hidden field to send the customer id to form handling function in the controller so it knows which customer object to work on 
+    @Html.HiddenFor(m => m.Customer.Id)
     <button type="submit" class="btn btn-primary">Save</button>
 }
 
