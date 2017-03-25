@@ -20,8 +20,16 @@ namespace Vidly.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        /* As model types are needed in the Controllers, make them available
+         * by having a corresponding DbSet (which represents the database table 
+         * for that object type) */
+
+        
         // represents customer table in database 
         public DbSet<Customer> Customers { get; set; }
+        
+        // movie table - need to add this if add-migration is to pay attention to it
+        public DbSet<Movie> Movies { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

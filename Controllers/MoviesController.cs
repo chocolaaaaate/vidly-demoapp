@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,30 +11,37 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
         // GET: Movies/Random
-        public ActionResult Random()
-        {
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Customer 1"},
-                new Customer { Name = "Customer 2"}
-            };
-            var movie = new Movie() { Name = "Nacho Libre!" };
+        //public ActionResult Random()
+        //{
+        //    var customers = new List<Customer>
+        //    {
+        //        new Customer { Name = "Customer 1"},
+        //        new Customer { Name = "Customer 2"}
+        //    };
+        //    var movie = new Movie() { Name = "Nacho Libre!" };
 
 
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
+        //    var viewModel = new RandomMovieViewModel
+        //    {
+        //        Movie = movie,
+        //        Customers = customers
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
-        public ActionResult Edit(int id)
-        {
-            return Content("There are " + id + " ducks!");
-        }
+        //public ActionResult Edit(int id)
+        //{
+        //    return Content("There are " + id + " ducks!");
+        //}
 
         //public ActionResult Index(int? pageIndex, string sortBy)
         //{
@@ -48,23 +56,27 @@ namespace Vidly.Controllers
         //    return Content("Index called. pageIndex = " + pageIndex + ", sortBy = " + sortBy);
         //}
 
-        [Route("movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")] // note adding constraints to possible attribute parameter values
-        public ActionResult ByReleaseDate(int year, int month)
+        //[Route("movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")] // note adding constraints to possible attribute parameter values
+        //public ActionResult ByReleaseDate(int year, int month)
+        //{
+        //    return Content(year + " / " + month); 
+        //}
+
+        private List<Movie> GetAllMovies()
         {
-            return Content(year + " / " + month); 
+            return _context.Movies.Include(m => m.Genre).ToList();
         }
 
         public ActionResult Index()
-        {
-            List<Movie> allMovies = new List<Movie>
-            {
-                new Movie() { Id = 1, Name = "The Eye" },
-                new Movie() { Id = 2, Name = "Nacho Libre" }
-            };
-
-            return View(allMovies);
+        { 
+            return View(GetAllMovies());
         }
-        
+
+        public ActionResult Details(int id)
+        {
+            return View(GetAllMovies().Find(m => m.Id == id));
+        }
+
     }
 }
 

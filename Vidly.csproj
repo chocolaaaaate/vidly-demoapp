@@ -195,8 +195,37 @@
     <Compile Include="Migrations\201703250408256_AddedDoBToCustomer.Designer.cs">
       <DependentUpon>201703250408256_AddedDoBToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703250426091_AddedGenreAndOtherAttribsToMovie.cs" />
+    <Compile Include="Migrations\201703250426091_AddedGenreAndOtherAttribsToMovie.Designer.cs">
+      <DependentUpon>201703250426091_AddedGenreAndOtherAttribsToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250428202_AddedGenreAndOtherAttribsToMovie2.cs" />
+    <Compile Include="Migrations\201703250428202_AddedGenreAndOtherAttribsToMovie2.Designer.cs">
+      <DependentUpon>201703250428202_AddedGenreAndOtherAttribsToMovie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250431286_GenreAdded1.cs" />
+    <Compile Include="Migrations\201703250431286_GenreAdded1.Designer.cs">
+      <DependentUpon>201703250431286_GenreAdded1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250432579_GenreAdded2.cs" />
+    <Compile Include="Migrations\201703250432579_GenreAdded2.Designer.cs">
+      <DependentUpon>201703250432579_GenreAdded2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250435155_GenreAdded3.cs" />
+    <Compile Include="Migrations\201703250435155_GenreAdded3.Designer.cs">
+      <DependentUpon>201703250435155_GenreAdded3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250438327_GenreAdded4.cs" />
+    <Compile Include="Migrations\201703250438327_GenreAdded4.Designer.cs">
+      <DependentUpon>201703250438327_GenreAdded4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250439414_SeedGenreData.cs" />
+    <Compile Include="Migrations\201703250439414_SeedGenreData.Designer.cs">
+      <DependentUpon>201703250439414_SeedGenreData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -245,6 +274,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +321,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703250408256_AddedDoBToCustomer.resx">
       <DependentUpon>201703250408256_AddedDoBToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250426091_AddedGenreAndOtherAttribsToMovie.resx">
+      <DependentUpon>201703250426091_AddedGenreAndOtherAttribsToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250428202_AddedGenreAndOtherAttribsToMovie2.resx">
+      <DependentUpon>201703250428202_AddedGenreAndOtherAttribsToMovie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250431286_GenreAdded1.resx">
+      <DependentUpon>201703250431286_GenreAdded1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250432579_GenreAdded2.resx">
+      <DependentUpon>201703250432579_GenreAdded2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250435155_GenreAdded3.resx">
+      <DependentUpon>201703250435155_GenreAdded3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250438327_GenreAdded4.resx">
+      <DependentUpon>201703250438327_GenreAdded4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250439414_SeedGenreData.resx">
+      <DependentUpon>201703250439414_SeedGenreData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
