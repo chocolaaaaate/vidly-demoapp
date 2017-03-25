@@ -33,7 +33,7 @@ namespace Vidly.Controllers
             // when only loading the customer objects not their associated membershiptype objects 
             // var allCustomers = _context.Customers.ToList();
 
-
+            // including connected objects in the query. This is called "eager loading". 
             var allCustomers = _context.Customers.Include(c => c.MembershipType).ToList();
 
             return allCustomers;

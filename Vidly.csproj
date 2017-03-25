@@ -183,6 +183,14 @@
     <Compile Include="Migrations\201703250245516_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201703250245516_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703250340495_AddDescriptionToMembershipType.cs" />
+    <Compile Include="Migrations\201703250340495_AddDescriptionToMembershipType.Designer.cs">
+      <DependentUpon>201703250340495_AddDescriptionToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703250341595_SeedMembershipTypeDescriptionData.cs" />
+    <Compile Include="Migrations\201703250341595_SeedMembershipTypeDescriptionData.Designer.cs">
+      <DependentUpon>201703250341595_SeedMembershipTypeDescriptionData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -270,6 +278,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703250245516_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201703250245516_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250340495_AddDescriptionToMembershipType.resx">
+      <DependentUpon>201703250340495_AddDescriptionToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703250341595_SeedMembershipTypeDescriptionData.resx">
+      <DependentUpon>201703250341595_SeedMembershipTypeDescriptionData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
