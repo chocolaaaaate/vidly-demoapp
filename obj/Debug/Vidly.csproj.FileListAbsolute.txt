@@ -146,3 +146,4 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddMembershipType.resources
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
