@@ -31,6 +31,9 @@ namespace Vidly.Models
         // movie table - need to add this if add-migration is to pay attention to it
         public DbSet<Movie> Movies { get; set; }
 
+        // membership types table 
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

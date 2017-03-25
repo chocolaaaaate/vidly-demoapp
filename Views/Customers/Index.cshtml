@@ -24,7 +24,8 @@ else
         {
             @*<tr><td><a href="/Customers/Details/@c.Id">@c.Name</a></td></tr>*@
             <tr>
-                <td>@Html.ActionLink(c.Name, "Details", "Customers", new { id = c.Id }, null)</td>
+                @*<td>@Html.ActionLink(c.Name, "Details", "Customers", new { id = c.Id }, null)</td>*@
+                <td>@Html.ActionLink(c.Name, "Edit", "Customers", new { id = c.Id }, null)</td>
                 <td>@c.MembershipType.Description</td>
             </tr>
         }
