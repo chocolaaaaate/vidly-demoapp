@@ -66,7 +66,6 @@ namespace Vidly.Controllers
         //{
         //    //ensuring this can only be called by http POST
         //    return View();
-
         //}
 
         //ensuring this can only be called by http POST

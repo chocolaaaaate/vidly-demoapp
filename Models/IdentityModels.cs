@@ -34,6 +34,9 @@ namespace Vidly.Models
         // membership types table 
         public DbSet<MembershipType> MembershipTypes { get; set; }
 
+        // genres table 
+        public DbSet<Genre> Genres { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -45,3 +48,4 @@ namespace Vidly.Models
         }
     }
 }
+

@@ -26,6 +26,8 @@ namespace Vidly.Models
         /* this allows membership type to be linked without needing the entire object tagging along - this is for optimization
          this is essentially the foreign key idea of plain old RDB
          due to its name, EF will automatically treat this as a foreign key!*/
+        [Required]
         public byte MembershipTypeId { get; set; }
     }
 }
+
