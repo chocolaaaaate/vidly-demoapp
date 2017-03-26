@@ -65,6 +65,24 @@ C:\Users\S\Google Drive\Software\ASPNETMVC\Vidly\Vidly\bin\Microsoft.AI.Web.xml
 C:\Users\S\Google Drive\Software\ASPNETMVC\Vidly\Vidly\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 C:\Users\S\Google Drive\Software\ASPNETMVC\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Users\S\Google Drive\Software\ASPNETMVC\Vidly\Vidly\obj\Debug\Vidly.pdb
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.InitialModel.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.InitialModel2.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddMembershipType.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddDescriptionToMembershipType.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.SeedMembershipTypeDescriptionData.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedDoBToCustomer.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedGenreAndOtherAttribsToMovie.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedGenreAndOtherAttribsToMovie2.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded1.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded2.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded3.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded4.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.SeedGenreData.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedCreateNewMoviePage.resources
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.csproj.GenerateResource.Cache
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\ApplicationInsights.config
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\roslyn\csc.exe
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\roslyn\csc.exe.config
@@ -110,7 +128,10 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Micro
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Newtonsoft.Json.dll
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Net.Http.Formatting.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Helpers.dll
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Http.dll
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Http.WebHost.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Mvc.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Optimization.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Razor.dll
@@ -123,6 +144,9 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Entit
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Net.Http.Formatting.xml
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Http.xml
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Http.WebHost.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Helpers.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Mvc.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\System.Web.Optimization.xml
@@ -137,23 +161,6 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Micro
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Microsoft.AI.Web.xml
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.InitialModel.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.InitialModel2.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddIsSubscribedToCustomer.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddMembershipType.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddDescriptionToMembershipType.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.SeedMembershipTypeDescriptionData.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedDoBToCustomer.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedGenreAndOtherAttribsToMovie.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedGenreAndOtherAttribsToMovie2.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded1.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded2.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded3.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.GenreAdded4.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.SeedGenreData.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.Migrations.AddedCreateNewMoviePage.resources
-C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.csproj.GenerateResource.Cache
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.pdb
