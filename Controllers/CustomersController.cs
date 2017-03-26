@@ -70,30 +70,33 @@ namespace Vidly.Controllers
 
         //ensuring this can only be called by http POST
         [HttpPost]
-        public ActionResult Save(Customer customer)
+        public ActionResult Save(NewCustomerViewModel cmv)
         {
-            //yes its actually the NewCustomerViewModel type but ASP.NET MVC is smart 
-            //enough to see properties prefixed with Customer so it can do this binding 
-            //straight to Customer. But understand why this happens. 
+            
+            if (!ModelState.IsValid)
+            {
+                cmv.MembershipTypes = _context.MembershipTypes.ToList();
+                return View("CustomerForm", cmv);
+            }
 
-            if (customer.Id == 0) // create
+            if (cmv.Customer.Id == 0) // create
             {
                 // SAVING TO THE DATABASE
-                _context.Customers.Add(customer);// not yet gone to DB
+                _context.Customers.Add(cmv.Customer);// not yet gone to DB
             }
             else // update existing customer 
             {
-                var custFromDb = _context.Customers.Single(c => c.Id == customer.Id);
+                var custFromDb = _context.Customers.Single(c => c.Id == cmv.Customer.Id);
                 //now update the customer from the db with values of the customer in the form that was sent in the POST request
 
 
                 //TryUpdateModel(custFromDb); // this updates the param object by mapping POST request values to its properties
                 // has the disadvantage of being an unfiltered update - risk if hacker puts bad things in POST request
 
-                custFromDb.Name = customer.Name;
-                custFromDb.DoB = customer.DoB;
-                custFromDb.MembershipTypeId = customer.MembershipTypeId; //TODO: this is null
-                custFromDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                custFromDb.Name = cmv.Customer.Name;
+                custFromDb.DoB = cmv.Customer.DoB;
+                custFromDb.MembershipTypeId = cmv.Customer.MembershipTypeId; //TODO: this is null
+                custFromDb.IsSubscribedToNewsletter = cmv.Customer.IsSubscribedToNewsletter;
 
             }
             _context.SaveChanges(); // NOW it was persisted to DB
@@ -106,7 +109,7 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.Single(c => c.Id == id);
             if (customer == null)
             {
                 return HttpNotFound(); // trying to edit a customer that doesn't exist 

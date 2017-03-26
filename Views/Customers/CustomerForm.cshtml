@@ -13,6 +13,7 @@
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.Name)
         @Html.TextBoxFor(c => c.Customer.Name, new { @class = "form-control"})
+        @Html.ValidationMessageFor(c => c.Customer.Name)
     </div>
     <div class="form-group">
         <label>Date of birth</label>
@@ -21,6 +22,7 @@
     <div class="form-group">
         <label>Membership type</label>
         @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Description"), "Select membership type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
     <div class="checkbox">
         @*note diff class for checkbox. refer to getbootstrap/css/ for ref*@
