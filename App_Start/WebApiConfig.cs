@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,10 @@ namespace Vidly.App_Start
     {
         public static void Register(HttpConfiguration config)
         {
-            // TODO: Add any additional configuration code.
+            // Add configuration to turn C#'s pascal notation to JavaScript's camel case notation
+            var formatterSerializerSettings = config.Formatters.JsonFormatter.SerializerSettings;
+            formatterSerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            formatterSerializerSettings.Formatting = Formatting.Indented;
 
             // Web API routes
             config.MapHttpAttributeRoutes();
