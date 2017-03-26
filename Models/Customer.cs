@@ -16,6 +16,7 @@ namespace Vidly.Models
         public string Name { get; set; }
 
         //date of birth
+        
         public DateTime DoB { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }

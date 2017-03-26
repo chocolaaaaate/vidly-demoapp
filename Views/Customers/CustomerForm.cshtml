@@ -33,6 +33,13 @@
 
     //need this hidden field to send the customer id to form handling function in the controller so it knows which customer object to work on 
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@*Enable client-side validation*@ 
+@section scripts 
+{
+    @Scripts.Render("~/bundles/jqueryval");    
 }
 

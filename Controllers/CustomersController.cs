@@ -32,8 +32,6 @@ namespace Vidly.Controllers
         private List<Customer> GetAllCustomers()
         {
             // when only loading the customer objects not their associated membershiptype objects 
-            // var allCustomers = _context.Customers.ToList();
-
             // including connected objects in the query. This is called "eager loading". 
             var allCustomers = _context.Customers.Include(c => c.MembershipType).ToList();
 
@@ -61,19 +59,17 @@ namespace Vidly.Controllers
             return View("CustomerForm", newCustomerViewModel);
         }
 
-        //[HttpPost]
-        //public ActionResult Create(NewCustomerViewModel viewModel)
-        //{
-        //    //ensuring this can only be called by http POST
-        //    return View();
-        //}
-
+ 
         //ensuring this can only be called by http POST
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             
-            if(customer.Name == null)
+            if (customer.Name == null
+                || (customer.DoB == null)
+                || (customer.MembershipTypeId == 0)
+                || (customer.MembershipTypeId >= 1 && ((DateTime.Today.Year - customer.DoB.Year) <18 )))
             {
                 var viewModel = new NewCustomerViewModel()
                 {
@@ -84,20 +80,7 @@ namespace Vidly.Controllers
                 return View("CustomerForm", viewModel);
             }
 
-            //if (!ModelState.IsValid)
-            //{
-
-            //    var viewModel = new NewCustomerViewModel()
-            //    {
-            //        Customer = customer,
-            //        MembershipTypes = _context.MembershipTypes.ToList()
-            //    };
-
-            //    return View("CustomerForm", viewModel);
-            //}
-
-
-
+            
             if (customer.Id == 0) // create
             {
                 // SAVING TO THE DATABASE
@@ -107,8 +90,7 @@ namespace Vidly.Controllers
             {
                 var custFromDb = _context.Customers.Single(c => c.Id == customer.Id);
                 //now update the customer from the db with values of the customer in the form that was sent in the POST request
-
-
+                
                 //TryUpdateModel(custFromDb); // this updates the param object by mapping POST request values to its properties
                 // has the disadvantage of being an unfiltered update - risk if hacker puts bad things in POST request
 
