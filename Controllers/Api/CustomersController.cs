@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -19,13 +20,13 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers (by convention because return type is collection of Customer)
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
         }
 
         // GET /api/customers/{id}
-        public Customer GetCustomer(int id)
+        public CustomerDto GetCustomer(int id)
         {
             //id is read from URL thanks to our mapping in WebApiConfig.cs
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -34,30 +35,33 @@ namespace Vidly.Controllers.Api
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
-            return customer;
+            return Mapper.Map<Customer, CustomerDto>(customer);
         }
 
         // POST /api/customers 
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
-            if(customer.Name == null)
+            if(customerDto.Name == null)
             {
                 // TODO add more validation later
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
+            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
-            return customer; // returning because server will assign it a ID that the client needs to know 
+            // the save caused an id to be assigned. we need to assign this back to the dto before returning it
+            customerDto.Id = customer.Id;
+            return customerDto; // returning because server will assign it a ID that the client needs to know 
 
         }
 
         // PUT /api/customer/{id}
         [HttpPut]
-        public void UpdateCustomer(int id, Customer customer)
+        public void UpdateCustomer(int id, CustomerDto customerDto)
         {
-            if (customer.Name == null)
+            if (customerDto.Name == null)
             {
                 // TODO add more validation later
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -70,11 +74,7 @@ namespace Vidly.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            custFromDb.Name = customer.Name;
-            custFromDb.DoB = customer.DoB;
-            custFromDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
-            custFromDb.MembershipTypeId = customer.MembershipTypeId;
-
+            Mapper.Map<CustomerDto, Customer>(customerDto, custFromDb);
             _context.SaveChanges();
         }
 
@@ -91,7 +91,6 @@ namespace Vidly.Controllers.Api
             _context.Customers.Remove(custFromDb);
             _context.SaveChanges();
         }
-
-
+        
     }
 }

@@ -164,3 +164,5 @@ C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\Micro
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.dll
 C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\obj\Debug\Vidly.pdb
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\AutoMapper.dll
+C:\Users\S\Google Drive\Software\Web dev\ASPNETMVC\Vidly\vidly-demoapp\bin\AutoMapper.xml
