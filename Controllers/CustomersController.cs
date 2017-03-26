@@ -70,33 +70,52 @@ namespace Vidly.Controllers
 
         //ensuring this can only be called by http POST
         [HttpPost]
-        public ActionResult Save(NewCustomerViewModel cmv)
+        public ActionResult Save(Customer customer)
         {
             
-            if (!ModelState.IsValid)
+            if(customer.Name == null)
             {
-                cmv.MembershipTypes = _context.MembershipTypes.ToList();
-                return View("CustomerForm", cmv);
+                var viewModel = new NewCustomerViewModel()
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
             }
 
-            if (cmv.Customer.Id == 0) // create
+            //if (!ModelState.IsValid)
+            //{
+
+            //    var viewModel = new NewCustomerViewModel()
+            //    {
+            //        Customer = customer,
+            //        MembershipTypes = _context.MembershipTypes.ToList()
+            //    };
+
+            //    return View("CustomerForm", viewModel);
+            //}
+
+
+
+            if (customer.Id == 0) // create
             {
                 // SAVING TO THE DATABASE
-                _context.Customers.Add(cmv.Customer);// not yet gone to DB
+                _context.Customers.Add(customer);// not yet gone to DB
             }
             else // update existing customer 
             {
-                var custFromDb = _context.Customers.Single(c => c.Id == cmv.Customer.Id);
+                var custFromDb = _context.Customers.Single(c => c.Id == customer.Id);
                 //now update the customer from the db with values of the customer in the form that was sent in the POST request
 
 
                 //TryUpdateModel(custFromDb); // this updates the param object by mapping POST request values to its properties
                 // has the disadvantage of being an unfiltered update - risk if hacker puts bad things in POST request
 
-                custFromDb.Name = cmv.Customer.Name;
-                custFromDb.DoB = cmv.Customer.DoB;
-                custFromDb.MembershipTypeId = cmv.Customer.MembershipTypeId; //TODO: this is null
-                custFromDb.IsSubscribedToNewsletter = cmv.Customer.IsSubscribedToNewsletter;
+                custFromDb.Name = customer.Name;
+                custFromDb.DoB = customer.DoB;
+                custFromDb.MembershipTypeId = customer.MembershipTypeId; //TODO: this is null
+                custFromDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
 
             }
             _context.SaveChanges(); // NOW it was persisted to DB
