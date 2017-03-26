@@ -15,11 +15,13 @@ namespace Vidly.Models
 
         public Genre Genre { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Genre of the movie is required")]
         public int GenreId { get; set; } // foreign key
 
-        public DateTime ReleaseDate { get; set; }
+        [Required(ErrorMessage = "Required: Release date of the movie.")]
+        public DateTime? ReleaseDate { get; set; }
 
+        [Required(ErrorMessage = "Required: Date the movie was added to store.")]
         public DateTime DateAdded { get; set; }
 
         public int NumberInStock { get; set; }

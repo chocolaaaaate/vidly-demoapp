@@ -40,6 +40,9 @@ namespace Vidly.Controllers
             {
                 Genres = _context.Genres.ToList(),
                 Movie = new Movie()
+                {
+                    DateAdded = DateTime.Today
+                }
             };
 
             return View("MovieForm", mvm);
@@ -59,14 +62,21 @@ namespace Vidly.Controllers
                 Genres = _context.Genres.ToList(),
                 Movie = movieFromDb
             };
-
+            
             return View("MovieForm", mvm);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(MovieViewModel mvm)
         {
-           
+            if (!ModelState.IsValid)
+            {
+                mvm.Genres = _context.Genres.ToList();
+                return View("MovieForm", mvm);
+            }
+
+
             if (mvm.Movie.Id == 0)
             {
                 // create new movie
