@@ -36,7 +36,8 @@ else
 {
     <script>
         $(document).ready(function () {
-            $("#customers .js-delete").on("click", function () {
+            //here we're hooking the handler on the table rather than one-per-row (less memory use)
+            $("#customers").on("click", ".js-delete", function () {
                 var thisDeleteButton = $(this);
 
                 bootbox.confirm("Are you sure you want to delete this customer?", function (result) {
