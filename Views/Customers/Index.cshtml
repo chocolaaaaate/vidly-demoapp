@@ -36,6 +36,9 @@ else
 {
     <script>
         $(document).ready(function () {
+            //using datatables (to get built-in sort and filter)
+            $("#customers").DataTable();
+
             //here we're hooking the handler on the table rather than one-per-row (less memory use)
             $("#customers").on("click", ".js-delete", function () {
                 var thisDeleteButton = $(this);
