@@ -12,6 +12,9 @@ namespace Vidly.App_Start
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors(); // ENABLING CORS
+
+
             // Add configuration to turn C#'s pascal notation to JavaScript's camel case notation
             var formatterSerializerSettings = config.Formatters.JsonFormatter.SerializerSettings;
             formatterSerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();

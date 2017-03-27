@@ -8,9 +8,11 @@ using System.Web.Http;
 using Vidly.Models;
 using Vidly.Dtos;
 using System.Data.Entity;
+using System.Web.Http.Cors;
 
 namespace Vidly.Controllers.Api
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CustomersController : ApiController
     {
 
