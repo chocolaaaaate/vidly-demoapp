@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
@@ -21,7 +23,8 @@ namespace Vidly.Controllers.Api
         // GET api/movies
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList());
+            //return Ok(_context.Movies.ToList());
+            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
         }
 
         // GET api/movies/{id}
@@ -34,41 +37,45 @@ namespace Vidly.Controllers.Api
                 return BadRequest();
             }
 
-            return Ok(mov);
+            return Ok(Mapper.Map<Movie, MovieDto>(mov));
         }
 
         // POST api/movies
         [HttpPost]
-        public IHttpActionResult CreateMovie(Movie mov)
+        public IHttpActionResult CreateMovie(MovieDto movDto)
         {
-            if (mov == null)
+            if (movDto == null)
             {
                 return BadRequest();
             }
 
+            var mov = Mapper.Map<MovieDto, Movie>(movDto);
             var newlyCreatedMovie = _context.Movies.Add(mov);
             _context.SaveChanges();
-            return Created(new Uri(Request.RequestUri + "/" + newlyCreatedMovie.Id), newlyCreatedMovie);
+            movDto.Id = newlyCreatedMovie.Id;
+            return Created(new Uri(Request.RequestUri + "/" + newlyCreatedMovie.Id), movDto);
         }
 
         // PUT api/movies/5
         [HttpPut]
-        public void UpdateMovie(int id, Movie mov)
+        public void UpdateMovie(int id, MovieDto movDto)
         {
             //TODO validation here
 
-            var existingVersionOfParamMovFromDb = _context.Movies.SingleOrDefault(m => m.Id == mov.Id);
+            var existingVersionOfParamMovFromDb = _context.Movies.SingleOrDefault(m => m.Id == movDto.Id);
 
             if (existingVersionOfParamMovFromDb == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            existingVersionOfParamMovFromDb.Name = mov.Name;
-            existingVersionOfParamMovFromDb.GenreId = mov.GenreId;
-            existingVersionOfParamMovFromDb.DateAdded = mov.DateAdded;
-            existingVersionOfParamMovFromDb.NumberInStock = mov.NumberInStock;
-            existingVersionOfParamMovFromDb.ReleaseDate = mov.ReleaseDate;
+            Mapper.Map<MovieDto, Movie>(movDto, existingVersionOfParamMovFromDb);
+
+            //existingVersionOfParamMovFromDb.Name = mov.Name;
+            //existingVersionOfParamMovFromDb.GenreId = mov.GenreId;
+            //existingVersionOfParamMovFromDb.DateAdded = mov.DateAdded;
+            //existingVersionOfParamMovFromDb.NumberInStock = mov.NumberInStock;
+            //existingVersionOfParamMovFromDb.ReleaseDate = mov.ReleaseDate;
             // TODO should I assign the genre too? 
 
             _context.SaveChanges();
