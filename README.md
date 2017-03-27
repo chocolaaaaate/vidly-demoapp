@@ -1,2 +1,2 @@
-# vidly-demoapp
-A demo ASP.NET MVC app
+# Vidly
+An ASP.NET MVC project by me. 
