@@ -26,16 +26,16 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers/{id}
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             //id is read from URL thanks to our mapping in WebApiConfig.cs
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             
             if(customer == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
-            return Mapper.Map<Customer, CustomerDto>(customer);
+            return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
 
         // POST /api/customers 
@@ -57,7 +57,7 @@ namespace Vidly.Controllers.Api
             customerDto.Id = customer.Id;
             //return customerDto; // returning because server will assign it a ID that the client needs to know 
             return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
-
+            // this Created(..) call returns the 201.
         }
 
         // PUT /api/customer/{id}
