@@ -40,12 +40,14 @@ namespace Vidly.Controllers.Api
 
         // POST /api/customers 
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
+            //using IHttpActionResult to confirm to RESTful api conventions. This will send 201 instead of 200 denoting successful creation rather than just 200=ok.
             if(customerDto.Name == null)
             {
                 // TODO add more validation later
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                //throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
@@ -53,7 +55,8 @@ namespace Vidly.Controllers.Api
             _context.SaveChanges();
             // the save caused an id to be assigned. we need to assign this back to the dto before returning it
             customerDto.Id = customer.Id;
-            return customerDto; // returning because server will assign it a ID that the client needs to know 
+            //return customerDto; // returning because server will assign it a ID that the client needs to know 
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto);
 
         }
 
