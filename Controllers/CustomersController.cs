@@ -40,7 +40,8 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            return View(GetAllCustomers());
+            // no longer need to send list of customers from server as client will fetch it via api. 
+            return View();
         }
 
         public ActionResult Details(int id)

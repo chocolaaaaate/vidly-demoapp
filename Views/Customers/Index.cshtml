@@ -1,43 +1,50 @@
-﻿@model List<Vidly.Models.Customer>
-
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Customers</h2>
 
-@if (Model.Count == 0)
-{
-    <p>No customers found</p>
-}
-else
-{
-    <table id="customers" class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Membership type</th>
-                <th></th>
-            </tr>
-        </thead>
-        @foreach (var c in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(c.Name, "Edit", "Customers", new { id = c.Id }, null)</td>
-                <td>@c.MembershipType.Description</td>
-                <td><button data-customer-id="@c.Id" class="btn-link js-delete">Delete</button></td>
-            </tr>
-        }
-    </table>
-}
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Membership type</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
 
 @section scripts
 {
     <script>
         $(document).ready(function () {
             //using datatables (to get built-in sort and filter)
-            $("#customers").DataTable();
+            $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, customerOnCurrentRow) {
+                            return "<a href='/customers/edit/" + customerOnCurrentRow.id + "'>" + data + "</a>"
+                        }
+                    },
+                    {
+                        data: "name"
+                    }, 
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>"
+                        }
+                    }
+                ]
+            });
 
             //here we're hooking the handler on the table rather than one-per-row (less memory use)
             $("#customers").on("click", ".js-delete", function () {

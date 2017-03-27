@@ -23,6 +23,8 @@ namespace Vidly.Controllers.Api
         // GET /api/customers (by convention because return type is collection of Customer)
         public IHttpActionResult GetCustomers()
         {
+            
+
             return Ok(_context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>));
         }
         //public IEnumerable<CustomerDto> GetCustomers()
