@@ -22,7 +22,7 @@
     <script>
         $(document).ready(function () {
             //using datatables (to get built-in sort and filter)
-            $("#customers").DataTable({
+            var custDataTable = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -35,7 +35,7 @@
                         }
                     },
                     {
-                        data: "name"
+                        data: "membershipType.description"
                     }, 
                     {
                         data: "id",
@@ -56,7 +56,7 @@
                             url: "/api/customers/" + thisDeleteButton.attr("data-customer-id"),
                             method: "DELETE",
                             success: function () {
-                                thisDeleteButton.parents("tr").remove();
+                                custDataTable.row(thisDeleteButton.parents("tr")).remove().draw();
                             }
                         });
                     }

@@ -13,11 +13,23 @@ namespace Vidly.App_Start
         public MappingProfile()
         {
             // automapper ASSUMES the properties match by name!!
-            Mapper.CreateMap<Customer, CustomerDto>();
-            Mapper.CreateMap<CustomerDto, Customer>();
+            //Mapper.CreateMap<Customer, CustomerDto>();
+            //Mapper.CreateMap<CustomerDto, Customer>();
 
+            //Mapper.CreateMap<Movie, MovieDto>();
+            //Mapper.CreateMap<MovieDto, Movie>();
+
+
+            // domain to Dto
+            Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<Movie, MovieDto>();
-            Mapper.CreateMap<MovieDto, Movie>();
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+
+            // Dto to domain
+            Mapper.CreateMap<CustomerDto, Customer>().ForMember(c => c.Id, opt => opt.Ignore());
+            Mapper.CreateMap<MovieDto, Movie>().ForMember(m => m.Id, opt => opt.Ignore());
+
+
         }
     }
 }
