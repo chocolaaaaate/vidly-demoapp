@@ -281,6 +281,18 @@
     <Compile Include="Migrations\201703260217139_AddedCreateNewMoviePage.Designer.cs">
       <DependentUpon>201703260217139_AddedCreateNewMoviePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703280218510_AtMoviesDatatableStage.cs" />
+    <Compile Include="Migrations\201703280218510_AtMoviesDatatableStage.Designer.cs">
+      <DependentUpon>201703280218510_AtMoviesDatatableStage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703280259027_ChangeSmalldatetimeToDatetimeMoviesTable.cs" />
+    <Compile Include="Migrations\201703280259027_ChangeSmalldatetimeToDatetimeMoviesTable.Designer.cs">
+      <DependentUpon>201703280259027_ChangeSmalldatetimeToDatetimeMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703280310464_changetodatetime2.cs" />
+    <Compile Include="Migrations\201703280310464_changetodatetime2.Designer.cs">
+      <DependentUpon>201703280310464_changetodatetime2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -603,6 +615,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703260217139_AddedCreateNewMoviePage.resx">
       <DependentUpon>201703260217139_AddedCreateNewMoviePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280218510_AtMoviesDatatableStage.resx">
+      <DependentUpon>201703280218510_AtMoviesDatatableStage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280259027_ChangeSmalldatetimeToDatetimeMoviesTable.resx">
+      <DependentUpon>201703280259027_ChangeSmalldatetimeToDatetimeMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280310464_changetodatetime2.resx">
+      <DependentUpon>201703280310464_changetodatetime2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

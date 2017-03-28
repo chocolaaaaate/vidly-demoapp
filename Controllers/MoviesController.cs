@@ -25,7 +25,8 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            return View(GetAllMovies());
+            // no need to send all movies anymore as the client will fetch them itself via ajax
+            return View();
         }
 
         public ActionResult Details(int id)
